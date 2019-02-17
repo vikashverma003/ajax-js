@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+dsfsd
+<div id="demo"></div>
+
+<ul id="demo1"></ul>
+
+<p id="title"></p>
+
+<h2 id="title1"></h2>
+
+<div id="qw"></div>
+
+
+
+
+<form id="form" action="https://jsonplaceholder.typicode.com/posts">
+
+
+	<input type="text" id="fname">
+	<br>
+	<input type="text" id="lname">
+	<br>
+	<input type="submit" value="submit">
+
+</form>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+//alert("dfsd");
+
+
+//$("#demo").load("test.html");
+ /* for loading the file */
+
+	/* $("#demo").load("test1.html", function(responseTxt, statusTxt, xhr){
+		
+		if(statusTxt == "success")
+		{
+			
+			alert("successfull");
+		}
+		else if(statusTxt == "error"){
+		
+			alert("Error:" + xhr.statusText);
+		
+		}
+
+
+	});*/
+	
+	
+	/* $.get('test.html', function(data){
+	
+	
+	//console.log(data);
+	
+	$("#demo").html(data);
+	
+	
+	}); */
+	
+	
+	/* now getting the json data */
+	
+	/* $.getJSON('users.json', function(data){
+	
+		$.each(data, function(i, users){
+		
+			//console.log(users);
+		
+			$("#demo1").append("<p>" + users.firstname + "</p>" + "<h2>" + users.lastname + "</h2>");
+		
+		});
+	
+	
+	}); */
+	
+	/* now getting the file through ajax call using the get method */
+	
+	/* $.ajax({
+	
+		method:"GET",
+		
+		url: "test.html",
+		
+	}).done(function(data){
+	
+		//console.log(data);
+	
+		$("#demo").append(data);
+	
+	}); */
+	
+	
+	
+	
+	/* $.ajax({
+	
+		method:"GET",
+		
+		url: "users.json",
+		
+	}).done(function(data){
+	
+		//console.log(data);
+	
+		$.each(data, function(i, user){
+			
+			//console.log(user);
+		
+			$("#demo1").append("<p>" +  user.firstname +"</p>")
+		
+		
+		});
+	
+	});  */
+	
+	
+	
+	
+	/* $.ajax({
+	
+		method: "GET",
+		url: "https://jsonplaceholder.typicode.com/posts",
+		
+	}).done(function(data){
+	
+		$.each(data, function(i, user){
+		
+			$("#demo").append("<h3>" + user.title + "</h3>" + "<p>" + user.body + "</p>");
+			
+			
+		
+			
+			//console.log(user);
+		
+		})
+	
+	
+	
+	}); */
+	
+	
+	/* $("#form").submit(function(e){
+	
+		e.preventDefault();
+		
+		var fname = $("#fname").val();
+		
+		var lname = $("#lname").val();
+		var lname = $("#lname").val();
+		
+		var url  = $(this).attr('action');
+		
+		$.post(url, {fname:fname, lname:lname}).done(function(data){
+		
+		console.log(data);
+		
+		//$("#title").append("<p>" +data +"</p>")
+		
+		
+		console.log("post saved");
+		
+		});
+		
+		
+	}); */
+	
+	
+	/*$.ajax({
+	
+		method:'GET',
+		url:'https://jsonplaceholder.typicode.com/posts',
+		
+	}).done(function(data){
+		
+		$.map(data, function(user, i){
+		
+			$("#qw").append("<p>"+ user.title+"</p>" +"<h3>"+ user.body+"</h3>");
+		
+		});
+		console.log(data);
+		
+	
+	}); */
+	
+	
+	/*$.getJSON('https://jsonplaceholder.typicode.com/posts', function(data){
+	
+		$.each(data, function(i, user){
+		
+			$("#qw").append("<h3>"+ user.title+"</h3>" +"<h3>"+ user.body+"</h3>");
+		
+		});
+	
+	
+	
+	});
+	*/
+	
+	
+	
+	
+
+	
+	
+	
+	
+ 
+
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>

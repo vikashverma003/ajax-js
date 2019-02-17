@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h3>Here is some ajax request</h3>
+<h4>To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
+
+</h4>
+<p>responseText	get the response data as a string</p>
+<button type="button" onclick="mydoc()">click me</button>
+<div id="demo"></div>
+
+<script>
+
+	function mydoc()
+	{
+	
+		var xhr = new XMLHttpRequest();
+		
+		xhr.onreadystatechange= function(){
+		
+		if(this.readyState == 4 && this.status ==200){
+		
+			document.getElementById("demo").innerHTML = this.responseText;
+		
+		}
+		
+		
+		};
+		
+		xhr.open('GET', 'test.html', true);
+		
+		xhr.send();
+		
+	
+	
+	}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

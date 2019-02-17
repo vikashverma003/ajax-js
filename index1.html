@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+dsfsd
+<div id="demo"></div>
+
+<ul id="demo1"></ul>
+
+<p id="title"></p>
+
+<h2 id="title1"></h2>
+
+
+<form id="form" action="https://jsonplaceholder.typicode.com/posts">
+
+
+
+<input type="text" id="fname">
+<br>
+<input type="text" id="lname">
+<br>
+
+<input type="submit" value="submit">
+
+
+</form>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+
+
+$(document).ready(function(){
+
+/*$('#demo').load('test.html', function(responseTxt, statusTxt, xhr){
+
+if(statusTxt == "success"){
+
+alert("it wont fine");
+}
+
+else if(statusTxt == "error"){
+
+alert("Error:" + xhr.statusText);
+
+}
+
+}); */
+
+/*$.get('test.html', function(data){
+
+$("#demo").html(data);
+
+
+});
+ 
+ */
+ 
+ <!-- now getting the jsons data -->
+
+
+/*$.getJSON('users.json', function(data){
+
+
+	$.each(data, function(i, user){
+	
+	$("ul#demo1").append('<li>'+ user.firstname  + '</li>' );
+	
+	});
+
+
+}); */
+
+
+/* $.ajax({
+
+method:"GET",
+
+url:"https://jsonplaceholder.typicode.com/posts",
+
+dataType:'json'
+
+}).done(function(data){
+
+console.log(data);
+
+$.map(data, function(post, i){
+
+$("#title").append("<h1>"+ post.title + "</h1>" + "<p>" + post.body+"</p>");
+
+});
+
+
+
+}); */
+
+
+$("#form").submit(function(e){
+
+e.preventDefault();
+
+
+var fname = $("#fname").val();
+
+var lname = $("#lname").val();
+
+var url = $(this).attr('action');
+
+
+$.post(url, {fname:fname, lnam:lname}).done(function(data){
+
+console.log('post saved');
+
+console.log(data);
+
+
+});
+
+});
+
+ 
+ 
+ 
+});
+
+
+</script>
+
+
+</body>
+</html>
